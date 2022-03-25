@@ -1,0 +1,27 @@
+<mat-card class="login-card">
+  <mat-card-title i18n> Please login </mat-card-title>
+  <mat-card-content [formGroup]="loginForm">
+    <mat-form-field appearance="outline" class="fill">
+      <mat-label i18n> Email </mat-label>
+      <input formControlName="emailInput" matInput />
+      <mat-icon matPrefix> person </mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="fill">
+      <mat-label i18n> Password </mat-label>
+      <input formControlName="passwordInput" matInput type="password" />
+      <mat-icon matPrefix> lock </mat-icon>
+    </mat-form-field>
+    <h3 *ngIf="showLoginError" class="error warn-color" i18n>Wrong email or password</h3>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      i18n
+      [disabled]="!loginForm.valid"
+      (click)="onLoginButtonClicked()"
+    >
+      Login
+    </button>
+  </mat-card-actions>
+</mat-card>

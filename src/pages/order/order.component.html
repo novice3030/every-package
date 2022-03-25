@@ -1,0 +1,95 @@
+<mat-card class="col-sm-6 col-xs-12" *ngIf="deliveryDates && deliveryDates.length > 0">
+  <mat-card-title>
+    <mat-toolbar color="accent" i18n>Create an order</mat-toolbar>
+  </mat-card-title>
+  <mat-card-content [formGroup]="orderForm">
+    <div class="row no-margin">
+      <div class="col-sm-6 col-xs-12 pickup-container">
+        <div class="row middle-xs center-xs fill">
+          <h2 class="col-xs" i18n>Pickup</h2>
+        </div>
+        <div class="row middle-xs fill no-margin">
+          <mat-form-field appearance="outline">
+            <mat-label i18n>Sender name</mat-label>
+            <input matInput formControlName="senderName" />
+          </mat-form-field>
+        </div>
+        <div class="row middle-xs fill no-margin">
+          <mat-form-field appearance="outline">
+            <mat-label>Select city for pickup</mat-label>
+            <mat-select formControlName="pickupCity">
+              <mat-option [value]="city" *ngFor="let city of cities$ | async">
+                {{ city.enName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row middle-xs fill no-margin">
+          <mat-form-field appearance="outline">
+            <mat-label i18n>Pickup address</mat-label>
+            <textarea matInput formControlName="pickupAddress"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xs-12 dropoff-container">
+        <div class="row middle-xs center-xs fill">
+          <h2 class="col-xs" i18n>Dropoff</h2>
+        </div>
+        <div class="row middle-xs fill no-margin">
+          <mat-form-field appearance="outline">
+            <mat-label i18n>Reciver name</mat-label>
+            <input matInput formControlName="reciverName" />
+          </mat-form-field>
+        </div>
+        <div class="row middle-xs fill no-margin">
+          <mat-form-field appearance="outline">
+            <mat-label>Select city for dropoff</mat-label>
+            <mat-select formControlName="dropoffCity">
+              <mat-option [value]="city" *ngFor="let city of cities$ | async">
+                {{ city.enName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row middle-xs fill no-margin">
+          <mat-form-field appearance="outline">
+            <mat-label i18n>Dropoff address</mat-label>
+            <textarea matInput formControlName="dropoffAddress"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row middle-xs fill no-margin">
+      <mat-form-field appearance="outline">
+        <mat-label i18n>Select delivery date</mat-label>
+        <input
+          matInput
+          readonly="readonly"
+          [matDatepicker]="picker"
+          formControlName="deliveryDate"
+          [matDatepickerFilter]="dateFilter"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker color="accent"></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="row no-margin">
+      <mat-form-field appearance="outline">
+        <mat-label>Select Delivery time</mat-label>
+        <mat-select formControlName="deliveryTime">
+          <mat-option *ngFor="let time of times" [value]="time">
+            {{ time }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row middle-xs start-xs no-margin">
+      <h4>Total price: {{ price | currency: "ILS" }}</h4>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button i18n color="primary" [disabled]="!orderForm.valid">
+      submit order
+    </button>
+  </mat-card-actions>
+</mat-card>

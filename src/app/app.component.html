@@ -1,0 +1,19 @@
+<div class="container main-container">
+  <mat-toolbar color="primary">
+    <div class="row fill middle-xs">
+      <span i18n class="col-sm-10 col-xs-8">Every Package</span>
+      <div class="toolbar-actions col-xs flex-end">
+        <div class="row center-xs end-xs">
+          <mat-slide-toggle
+            [matTooltip]="tooltipText"
+            (change)="onThemeToggleChange($event)"
+          ></mat-slide-toggle>
+          <mat-icon> {{ themeIcon }} </mat-icon>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+  <div class="row center-xs middle-xs outlet-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
