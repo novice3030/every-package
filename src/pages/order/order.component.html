@@ -15,6 +15,19 @@
           </mat-form-field>
         </div>
         <div class="row middle-xs fill no-margin">
+          <mat-form-field appearance="outline" class="fill">
+            <mat-label i18n>Sender phone</mat-label>
+            <ngx-mat-intl-tel-input
+              [onlyCountries]="['il']"
+              [enablePlaceholder]="true"
+              [enableSearch]="false"
+              name="phone"
+              describedBy="phoneInput"
+              formControlName="senderPhone"
+            ></ngx-mat-intl-tel-input>
+          </mat-form-field>
+        </div>
+        <div class="row middle-xs fill no-margin">
           <mat-form-field appearance="outline">
             <mat-label>Select city for pickup</mat-label>
             <mat-select formControlName="pickupCity">
@@ -39,6 +52,19 @@
           <mat-form-field appearance="outline">
             <mat-label i18n>Reciver name</mat-label>
             <input matInput formControlName="reciverName" />
+          </mat-form-field>
+        </div>
+        <div class="row middle-xs fill no-margin">
+          <mat-form-field appearance="outline" class="fill">
+            <mat-label i18n>Reciver phone</mat-label>
+            <ngx-mat-intl-tel-input
+              [onlyCountries]="['il']"
+              [enablePlaceholder]="true"
+              [enableSearch]="false"
+              name="phone"
+              describedBy="phoneInput"
+              formControlName="reciverPhone"
+            ></ngx-mat-intl-tel-input>
           </mat-form-field>
         </div>
         <div class="row middle-xs fill no-margin">
@@ -88,7 +114,7 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button i18n color="primary" [disabled]="!orderForm.valid">
+    <button mat-raised-button i18n color="primary" [disabled]="!orderForm.valid" (click)="onSubmitOrderClicked()">
       submit order
     </button>
   </mat-card-actions>

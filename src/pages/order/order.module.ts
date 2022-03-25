@@ -11,6 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {NgxMatIntlTelInputModule} from 'ngx-mat-intl-tel-input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [OrderComponent],
@@ -26,6 +28,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatSelectModule,
     MatMomentDateModule,
     MatToolbarModule,
+    MatSnackBarModule,
+    NgxMatIntlTelInputModule,
   ],
 })
 export class OrderModule {}

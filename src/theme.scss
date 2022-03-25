@@ -273,3 +273,11 @@ $altTheme: (
 .accent-text {
   color: $dark-accent-text;
 }
+
+.warn-snackbar {
+  background-color: map-get($mat-warn, 'main');
+}
+
+.primary-color-snackbar {
+  background-color: map-get($mat-primary, 'main');
+}

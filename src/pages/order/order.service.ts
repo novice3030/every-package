@@ -1,13 +1,18 @@
 import {Injectable} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import * as moment from 'moment';
+import {catchError} from 'rxjs';
+import {ApiService} from 'src/api/api.service';
 import {DeliveryDate} from 'src/models/delivery-date.model';
+import {Order} from './../../models/order.model';
 import {City} from './../../models/city.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrderService {
-  constructor() {}
+  constructor(private api: ApiService, private snackbar: MatSnackBar) {}
 
   calcOrderPrice(pickupCity: City, dropoffCity: City): number {
     return dropoffCity.enName === pickupCity.enName
@@ -24,5 +29,37 @@ export class OrderService {
       }
     }
     return [];
+  }
+
+  submitOrder(orderForm: FormGroup) {
+    this.api
+      .submitOrder({
+        deliveryDate: orderForm.controls['deliveryDate'].value,
+        deliveryTime: orderForm.controls['deliveryTime'].value,
+        dropoffAddress: orderForm.controls['dropoffAddress'].value,
+        dropoffCity: orderForm.controls['dropoffCity'].value,
+        pickupAddress: orderForm.controls['pickupAddress'].value,
+        pickupCity: orderForm.controls['pickupCity'].value,
+        reciverName: orderForm.controls['reciverName'].value,
+        reciverPhone: orderForm.controls['reciverPhone'].value,
+        senderName: orderForm.controls['senderName'].value,
+        senderPhone: orderForm.controls['senderPhone'].value,
+      } as Order)
+      .pipe(
+        catchError(error => {
+          this.snackbar.open($localize`Faild to create order!`, undefined, {
+            duration: 3000,
+            panelClass: 'warn-snackbar',
+          });
+          throw error;
+        }),
+      )
+      .subscribe(() => {
+        this.snackbar.open($localize`Order created!`, undefined, {
+          duration: 3000,
+          panelClass: 'primary-color-snackbar',
+        });
+        orderForm.reset();
+      });
   }
 }

@@ -10,9 +10,12 @@ import {
 import * as moment from 'moment';
 import {ApiService} from 'src/api/api.service';
 import {DeliveryDate} from 'src/models/delivery-date.model';
+import {Order} from './../../models/order.model';
 import {SubSink} from 'subsink';
 import {City} from './../../models/city.model';
 import {OrderService} from './order.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {catchError} from 'rxjs';
 
 @Component({
   selector: 'app-order',
@@ -23,10 +26,12 @@ export class OrderComponent implements OnInit, OnDestroy {
   private subs = new SubSink();
   orderForm = new FormGroup({
     senderName: new FormControl('', [Validators.required]),
+    senderPhone: new FormControl('', [Validators.required]),
     pickupAddress: new FormControl('', [Validators.required]),
     pickupCity: new FormControl('', [Validators.required]),
     dropoffCity: new FormControl('', [Validators.required]),
     reciverName: new FormControl('', [Validators.required]),
+    reciverPhone: new FormControl('', [Validators.required]),
     dropoffAddress: new FormControl('', [Validators.required]),
     deliveryDate: new FormControl('', [Validators.required, dateValidator]),
     deliveryTime: new FormControl('', [Validators.required]),
@@ -40,7 +45,11 @@ export class OrderComponent implements OnInit, OnDestroy {
     const momentDate = moment(d) || moment();
     return momentDate.isSameOrAfter(moment()) && momentDate.day() !== 6;
   };
-  constructor(private api: ApiService, private orderService: OrderService) {}
+  constructor(
+    private api: ApiService,
+    private orderService: OrderService,
+    private snackbar: MatSnackBar,
+  ) {}
 
   ngOnInit(): void {
     this.subs.add(
@@ -66,6 +75,10 @@ export class OrderComponent implements OnInit, OnDestroy {
     );
 
     this.api.getDeliveryDates().subscribe(dates => (this.deliveryDates = dates));
+  }
+
+  onSubmitOrderClicked() {
+    this.orderService.submitOrder(this.orderForm);
   }
 
   ngOnDestroy(): void {
