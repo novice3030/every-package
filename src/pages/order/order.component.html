@@ -32,7 +32,7 @@
             <mat-label i18n>Select city for pickup</mat-label>
             <mat-select formControlName="pickupCity">
               <mat-option [value]="city" *ngFor="let city of cities$ | async">
-                {{ city.enName }}
+                {{ locale === 'he' ? city.heName : city.enName }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -72,7 +72,7 @@
             <mat-label i18n>Select city for dropoff</mat-label>
             <mat-select formControlName="dropoffCity">
               <mat-option [value]="city" *ngFor="let city of cities$ | async">
-                {{ city.enName }}
+                {{ locale === 'he' ? city.heName : city.enName }}
               </mat-option>
             </mat-select>
           </mat-form-field>

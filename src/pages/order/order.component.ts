@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnDestroy, OnInit} from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -10,12 +10,9 @@ import {
 import * as moment from 'moment';
 import {ApiService} from 'src/api/api.service';
 import {DeliveryDate} from 'src/models/delivery-date.model';
-import {Order} from './../../models/order.model';
 import {SubSink} from 'subsink';
 import {City} from './../../models/city.model';
 import {OrderService} from './order.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {catchError} from 'rxjs';
 
 @Component({
   selector: 'app-order',
@@ -49,7 +46,7 @@ export class OrderComponent implements OnInit, OnDestroy {
   constructor(
     private api: ApiService,
     private orderService: OrderService,
-    private snackbar: MatSnackBar,
+    @Inject(LOCALE_ID) public locale: string,
   ) {}
 
   ngOnInit(): void {
