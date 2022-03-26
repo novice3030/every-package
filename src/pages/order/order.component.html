@@ -4,7 +4,7 @@
   </mat-card-title>
   <mat-card-content [formGroup]="orderForm">
     <div class="row no-margin">
-      <div class="col-sm-6 col-xs-12 pickup-container">
+      <div class="col-sm-6 col-xs-12 pickup-container" [ngClass]="{'rtl': isRTL}">
         <div class="row middle-xs center-xs fill">
           <h2 class="col-xs" i18n>Pickup</h2>
         </div>
@@ -29,7 +29,7 @@
         </div>
         <div class="row middle-xs fill no-margin">
           <mat-form-field appearance="outline">
-            <mat-label>Select city for pickup</mat-label>
+            <mat-label i18n>Select city for pickup</mat-label>
             <mat-select formControlName="pickupCity">
               <mat-option [value]="city" *ngFor="let city of cities$ | async">
                 {{ city.enName }}
@@ -44,7 +44,7 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="col-sm-6 col-xs-12 dropoff-container">
+      <div class="col-sm-6 col-xs-12 dropoff-container" [ngClass]="{'rtl': isRTL}">
         <div class="row middle-xs center-xs fill">
           <h2 class="col-xs" i18n>Dropoff</h2>
         </div>
@@ -69,7 +69,7 @@
         </div>
         <div class="row middle-xs fill no-margin">
           <mat-form-field appearance="outline">
-            <mat-label>Select city for dropoff</mat-label>
+            <mat-label i18n>Select city for dropoff</mat-label>
             <mat-select formControlName="dropoffCity">
               <mat-option [value]="city" *ngFor="let city of cities$ | async">
                 {{ city.enName }}
@@ -101,7 +101,7 @@
     </div>
     <div class="row no-margin">
       <mat-form-field appearance="outline">
-        <mat-label>Select Delivery time</mat-label>
+        <mat-label i18n>Select Delivery time</mat-label>
         <mat-select formControlName="deliveryTime">
           <mat-option *ngFor="let time of times" [value]="time">
             {{ time }}
@@ -110,11 +110,17 @@
       </mat-form-field>
     </div>
     <div class="row middle-xs start-xs no-margin">
-      <h4>Total price: {{ price | currency: "ILS" }}</h4>
+      <h4><ng-container i18n>Total price:</ng-container> {{ price | currency: "ILS" }}</h4>
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button i18n color="primary" [disabled]="!orderForm.valid" (click)="onSubmitOrderClicked()">
+    <button
+      mat-raised-button
+      i18n
+      color="primary"
+      [disabled]="!orderForm.valid"
+      (click)="onSubmitOrderClicked()"
+    >
       submit order
     </button>
   </mat-card-actions>

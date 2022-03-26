@@ -40,6 +40,7 @@ export class OrderComponent implements OnInit, OnDestroy {
   price = 0;
   times: string[] = [];
   deliveryDates: DeliveryDate[] = [];
+  isRTL = false;
 
   dateFilter = (d: Date | null): boolean => {
     const momentDate = moment(d) || moment();
@@ -52,6 +53,7 @@ export class OrderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.isRTL = document.dir === 'rtl';
     this.subs.add(
       this.orderForm.controls['pickupCity'].valueChanges.subscribe((pickupCity: City) => {
         const dropOffCity = this.orderForm.controls['dropoffCity'].value as City;

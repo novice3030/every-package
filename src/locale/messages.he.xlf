@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3474399534052463216" datatype="html">
+        <source>Every Package</source>
+        <target>כל חבילה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8244678065514052528" datatype="html">
+        <source>Change to dark mode</source>
+         <target>החלף למצב לילה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8188501651608594787" datatype="html">
+        <source>Change to light mode</source>
+         <target>החלף למצב יום</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8819863065569989691" datatype="html">
+        <source> Please login </source>
+         <target>התחבר בבקשה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/login/login/login.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7817163188308824825" datatype="html">
+        <source> Email </source>
+         <target>דוא"ל</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/login/login/login.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1557080315836233628" datatype="html">
+        <source> Password </source>
+         <target>סיסמה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/login/login/login.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8387821074976463719" datatype="html">
+        <source>Wrong email or password</source>
+         <target>שם משתמש או סיסמה שגויים</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/login/login/login.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1908285951500318953" datatype="html">
+        <source> Login </source>
+         <target>התחבר</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/login/login/login.component.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4751055094166167139" datatype="html">
+        <source>Create an order</source>
+         <target>צור הזמנה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6541976377673512417" datatype="html">
+        <source>Pickup</source>
+         <target>איסוף</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5921998108777941946" datatype="html">
+        <source>Sender name</source>
+         <target>שם השולח</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2702568735073512243" datatype="html">
+        <source>Sender phone</source>
+         <target>טלפון השולח</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="580939923557347761" datatype="html">
+        <source>Pickup address</source>
+         <target>כתובות איסוף</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4472304089878609172" datatype="html">
+        <source>Dropoff</source>
+        <target>מסירה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3633177709949904758" datatype="html">
+        <source>Reciver name</source>
+        <target>שם המקבל</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9025722394420710457" datatype="html">
+        <source>Reciver phone</source>
+        <target>טלפון המקבל</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4848160959159289208" datatype="html">
+        <source>Dropoff address</source>
+        <target>כתובת מסירה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8133376627380248431" datatype="html">
+        <source>Select delivery date</source>
+        <target>בחר תאריך משלוח</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6167273666202328332" datatype="html">
+        <source> submit order </source>
+        <target>שלח הזמנה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">118,119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1069403671734088765" datatype="html">
+        <source>Faild to create order!</source>
+        <target>שגיאה ביצירת הזמנה!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.service.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4588637276742062041" datatype="html">
+        <source>Order created!</source>
+        <target>הזמנה נוצרה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.service.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="1363855692582187629" datatype="html">
+        <source>Select Delivery time</source>
+        <target>בחר שעת מסירה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="6806240502693505932" datatype="html">
+        <source>סה"כ:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="1963876698075579493" datatype="html">
+        <source>Select city for pickup</source>
+        <target>בחר עיר לאיסוף</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="375924108564580128" datatype="html">
+        <source>Select city for dropoff</source>
+        <target>בחר עיר למסירה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/order/order.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
