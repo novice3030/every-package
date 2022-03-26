@@ -22,9 +22,10 @@ export class OrderService {
 
   getDeliveryTimes(date: Date, deliveryDates: DeliveryDate[]): string[] {
     if (date) {
-      const momentDate = moment(date);
+      const momentDate = moment(date).locale('en');
       if (momentDate.isValid()) {
         const day = momentDate.format('ddd');
+        console.log(day);
         return deliveryDates.find(date => date.day === day)?.times || [];
       }
     }
@@ -34,7 +35,7 @@ export class OrderService {
   submitOrder(orderForm: FormGroup) {
     this.api
       .submitOrder({
-        deliveryDate: orderForm.controls['deliveryDate'].value,
+        deliveryDate: moment(orderForm.controls['deliveryDate'].value).toISOString(),
         deliveryTime: orderForm.controls['deliveryTime'].value,
         dropoffAddress: orderForm.controls['dropoffAddress'].value,
         dropoffCity: orderForm.controls['dropoffCity'].value,
