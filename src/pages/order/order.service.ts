@@ -25,7 +25,6 @@ export class OrderService {
       const momentDate = moment(date).locale('en');
       if (momentDate.isValid()) {
         const day = momentDate.format('ddd');
-        console.log(day);
         return deliveryDates.find(date => date.day === day)?.times || [];
       }
     }
